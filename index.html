@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbfaf7">
+  <meta name="description" content="慕亞音樂藝術連結入口：琴房預約、樂器租借、上課諮詢、官方 LINE。">
+  <title>慕亞音樂藝術</title>
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --panel: #fbfaf7;
+      --card: #fffefc;
+      --text: #24201b;
+      --muted: #8f8068;
+      --line: #e4d9c8;
+      --gold: #b08a45;
+      --gold-strong: #c4a36e;
+      --gold-soft: #fff7e8;
+      --shadow: 0 20px 52px rgba(46, 38, 27, .16);
+      --card-shadow: 0 8px 18px rgba(80, 61, 34, .06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, .9), transparent 34rem),
+        var(--bg);
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      letter-spacing: 0;
+    }
+
+    main {
+      width: min(100%, 390px);
+    }
+
+    .linktree {
+      width: 100%;
+      min-height: min(760px, calc(100vh - 40px));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 58px 20px 22px;
+      border: 1px solid rgba(228, 217, 200, .9);
+      border-radius: 30px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .brand {
+      text-align: center;
+      padding: 8px 0 24px;
+    }
+
+    .monogram {
+      width: 54px;
+      height: 54px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 13px;
+      border: 1px solid #d9c39a;
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .tagline {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .03em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .tile {
+      min-height: 108px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 10px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+      box-shadow: var(--card-shadow);
+      color: inherit;
+      text-align: center;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .18s ease, border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
+    }
+
+    .tile:focus-visible {
+      outline: 3px solid rgba(196, 163, 110, .32);
+      outline-offset: 3px;
+    }
+
+    .tile:hover,
+    .tile:active {
+      transform: translateY(-2px);
+      border-color: var(--gold-strong);
+      background: var(--gold-soft);
+      box-shadow: 0 12px 24px rgba(176, 138, 69, .16);
+    }
+
+    .icon {
+      height: 38px;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: 33px;
+      line-height: 1;
+    }
+
+    .line-icon {
+      color: #9a7536;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .coming-soon {
+      width: 100%;
+      min-height: 104px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+      box-shadow: var(--card-shadow);
+      color: inherit;
+      text-align: center;
+    }
+
+    .coming-soon-main {
+      display: grid;
+      gap: 4px;
+    }
+
+    .coming-soon-title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .coming-soon-note {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .coming-soon-status {
+      flex: 0 0 auto;
+      padding: 6px 9px;
+      border: 1px solid rgba(176, 138, 69, .3);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .label {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .footer {
+      margin: 20px 0 0;
+      color: #9a8b76;
+      font-size: 11px;
+      text-align: center;
+      letter-spacing: .04em;
+    }
+
+    .quick-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .quick-action {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--card);
+      box-shadow: 0 7px 16px rgba(80, 61, 34, .06);
+      color: var(--gold);
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .18s ease, border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
+    }
+
+    .quick-action:hover,
+    .quick-action:active,
+    .quick-action:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--gold-strong);
+      background: var(--gold-soft);
+      box-shadow: 0 10px 20px rgba(176, 138, 69, .14);
+      outline: none;
+    }
+
+    .quick-action[aria-disabled="true"] {
+      opacity: .72;
+      cursor: default;
+    }
+
+    .quick-action[aria-disabled="true"]:hover,
+    .quick-action[aria-disabled="true"]:active,
+    .quick-action[aria-disabled="true"]:focus-visible {
+      transform: none;
+      border-color: var(--line);
+      background: var(--card);
+      box-shadow: 0 7px 16px rgba(80, 61, 34, .06);
+    }
+
+    .quick-action svg {
+      width: 21px;
+      height: 21px;
+      stroke: currentColor;
+    }
+
+    .quick-action-text {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 340px) {
+      body {
+        padding: 12px;
+      }
+
+      .linktree {
+        min-height: calc(100vh - 24px);
+        padding: 38px 14px 18px;
+        border-radius: 24px;
+      }
+
+      h1 {
+        font-size: 19px;
+      }
+
+      .tile {
+        min-height: 100px;
+        padding: 14px 8px;
+      }
+
+      .icon {
+        height: 34px;
+        font-size: 30px;
+      }
+
+      .coming-soon {
+        min-height: 96px;
+        padding: 14px 12px;
+      }
+
+      .coming-soon-title {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="linktree" aria-label="慕亞音樂藝術連結入口">
+      <header class="brand">
+        <div class="monogram" aria-hidden="true">M</div>
+        <h1>慕亞音樂藝術</h1>
+        <p class="tagline">Music &amp; Art Studio</p>
+      </header>
+
+      <nav class="grid" aria-label="主要連結">
+        <a class="tile" href="https://reurl.cc/18zVn8" target="_blank" rel="noopener noreferrer" aria-label="琴房預約">
+          <span class="icon" aria-hidden="true">🎹</span>
+          <span class="label">琴房預約</span>
+        </a>
+
+        <a class="tile" href="https://reurl.cc/7El8ZD" target="_blank" rel="noopener noreferrer" aria-label="樂器租借">
+          <span class="icon" aria-hidden="true">🎻</span>
+          <span class="label">樂器租借</span>
+        </a>
+
+        <a class="tile" href="https://reurl.cc/EmLgon" target="_blank" rel="noopener noreferrer" aria-label="上課諮詢">
+          <span class="icon" aria-hidden="true">
+            <svg width="39" height="38" viewBox="0 0 78 76" fill="none" focusable="false">
+              <path d="M45 10V49C45 58.4 37.4 66 28 66C20.8 66 15 61.5 15 56C15 50.5 20.8 46 28 46C33.2 46 37.7 48.4 40 51.9" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M45 14C55 13 60 16 63 22" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="label">上課諮詢</span>
+        </a>
+
+        <a class="tile" href="https://lin.ee/OXIVFbZ" target="_blank" rel="noopener noreferrer" aria-label="官方 LINE">
+          <span class="icon line-icon" aria-hidden="true">LINE</span>
+          <span class="label">官方 LINE</span>
+        </a>
+      </nav>
+
+      <div class="coming-soon" role="note" aria-label="免費體驗課，期間限定，尚未開放">
+        <span class="coming-soon-main">
+          <span class="coming-soon-title">免費體驗課</span>
+          <span class="coming-soon-note">期間限定</span>
+        </span>
+        <span class="coming-soon-status">尚未開放</span>
+      </div>
+
+      <p class="footer">預約、租借與諮詢入口</p>
+
+      <div class="quick-actions" aria-label="快速操作">
+        <a class="quick-action" href="https://maps.app.goo.gl/biH7BBWtZdeTBES28?g_st=com.google.maps.preview.copy" target="_blank" rel="noopener noreferrer" aria-label="導航">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21L20 4L3 12L10.5 13.5L12 21Z" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <a class="quick-action" href="https://www.instagram.com/musetopia_taipei?igsh=MTlqanNmc2xsYXVlaw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="5" y="5" width="14" height="14" rx="4" stroke-width="2"/>
+            <circle cx="12" cy="12" r="3.3" stroke-width="2"/>
+            <path d="M16.8 7.4H16.9" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+        </a>
+
+        <button class="quick-action" type="button" aria-label="分享" onclick="sharePage()">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 16V4" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 9L12 4L17 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 14V19H19V14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+  </main>
+  <script>
+    function sharePage() {
+      const shareData = {
+        title: '慕亞音樂藝術',
+        text: '慕亞音樂藝術預約與諮詢入口',
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData);
+      }
+    }
+  </script>
+</body>
+</html>
