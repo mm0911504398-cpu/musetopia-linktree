@@ -162,6 +162,22 @@
       box-shadow: var(--card-shadow);
       color: inherit;
       text-align: center;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .18s ease, border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
+    }
+
+    .coming-soon:focus-visible {
+      outline: 3px solid rgba(196, 163, 110, .32);
+      outline-offset: 3px;
+    }
+
+    .coming-soon:hover,
+    .coming-soon:active {
+      transform: translateY(-2px);
+      border-color: var(--gold-strong);
+      background: var(--gold-soft);
+      box-shadow: 0 12px 24px rgba(176, 138, 69, .16);
     }
 
     .coming-soon-main {
@@ -339,13 +355,13 @@
         </a>
       </nav>
 
-      <div class="coming-soon" role="note" aria-label="免費體驗課，期間限定，尚未開放">
+      <a class="coming-soon" href="https://reurl.cc/N2dlRx" target="_blank" rel="noopener noreferrer" aria-label="免費體驗課，期間限定 7 至 9 月，開放預約中">
         <span class="coming-soon-main">
           <span class="coming-soon-title">免費體驗課</span>
-          <span class="coming-soon-note">期間限定</span>
+          <span class="coming-soon-note">期間限定（7-9月）</span>
         </span>
-        <span class="coming-soon-status">尚未開放</span>
-      </div>
+        <span class="coming-soon-status">開放預約中</span>
+      </a>
 
       <p class="footer">預約、租借與諮詢入口</p>
 
