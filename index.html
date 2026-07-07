@@ -148,18 +148,18 @@
 
     .coming-soon {
       width: 100%;
-      min-height: 104px;
+      min-height: 128px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      margin-top: 12px;
-      padding: 16px 18px;
-      border: 1px solid var(--line);
+      gap: 12px;
+      margin: 0 0 16px;
+      padding: 20px;
+      border: 2px solid var(--gold-strong);
       border-radius: 16px;
-      background: var(--card);
-      box-shadow: var(--card-shadow);
+      background: var(--gold-soft);
+      box-shadow: 0 12px 26px rgba(176, 138, 69, .16);
       color: inherit;
       text-align: center;
       text-decoration: none;
@@ -186,25 +186,26 @@
     }
 
     .coming-soon-title {
-      font-size: 16px;
+      font-size: 19px;
       font-weight: 700;
       line-height: 1.25;
     }
 
     .coming-soon-note {
       color: var(--gold);
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: .04em;
     }
 
     .coming-soon-status {
       flex: 0 0 auto;
-      padding: 6px 9px;
-      border: 1px solid rgba(176, 138, 69, .3);
+      padding: 8px 13px;
+      border: 1px solid var(--gold);
       border-radius: 999px;
-      color: var(--muted);
-      font-size: 11px;
+      background: var(--gold);
+      color: #fff;
+      font-size: 12px;
       font-weight: 700;
       white-space: nowrap;
     }
@@ -309,8 +310,8 @@
       }
 
       .coming-soon {
-        min-height: 96px;
-        padding: 14px 12px;
+        min-height: 116px;
+        padding: 18px 12px;
       }
 
       .coming-soon-title {
@@ -327,6 +328,14 @@
         <h1>慕亞音樂藝術</h1>
         <p class="tagline">Music &amp; Art Studio</p>
       </header>
+
+      <a class="coming-soon" href="https://reurl.cc/N2dlRx" target="_blank" rel="noopener noreferrer" aria-label="免費體驗課，期間限定 7 至 9 月，開放預約中">
+        <span class="coming-soon-main">
+          <span class="coming-soon-title">免費體驗課</span>
+          <span class="coming-soon-note">期間限定（7-9月）</span>
+        </span>
+        <span class="coming-soon-status">開放預約中</span>
+      </a>
 
       <nav class="grid" aria-label="主要連結">
         <a class="tile" href="https://reurl.cc/18zVn8" target="_blank" rel="noopener noreferrer" aria-label="琴房預約">
@@ -354,14 +363,6 @@
           <span class="label">官方 LINE</span>
         </a>
       </nav>
-
-      <a class="coming-soon" href="https://reurl.cc/N2dlRx" target="_blank" rel="noopener noreferrer" aria-label="免費體驗課，期間限定 7 至 9 月，開放預約中">
-        <span class="coming-soon-main">
-          <span class="coming-soon-title">免費體驗課</span>
-          <span class="coming-soon-note">期間限定（7-9月）</span>
-        </span>
-        <span class="coming-soon-status">開放預約中</span>
-      </a>
 
       <p class="footer">預約、租借與諮詢入口</p>
 
